@@ -1,0 +1,39 @@
+# Demo 1: Thunderridge Website Familiarity
+
+## Design Direction
+
+Design this demo to feel familiar to users of the Idaho Falls Thunderridge High School website. Use the school site as the primary visual and interaction reference so students, families, and supporters can recognize the local school identity and navigate the demo comfortably.
+
+## Reference
+
+- Thunderridge High School: https://www.thunderridgetitans.com/
+
+## Demo Purpose
+
+Present a website concept for the Thunderridge High School Football Booster Club that builds on familiar Thunderridge school web conventions. The demo should communicate how football-related information and actions could be organized for the high school program and Grid Kids audience.
+
+## Project Context
+
+The overall project is a website for the Thunderridge High School Football Booster Club, serving students, families, boosters, contributors, and school district members. The planned scope includes Thunderridge High School Football (grades 9-12) and Thunderridge Grid Kids Football (grades 4-8).
+
+Key needs identified so far include:
+
+- sharing schedules and calendars
+- making registration easier to find and complete
+- allowing merchandise reservations without online transactions
+- providing a way for authorized administrators to update site information
+
+## Design Principles
+
+- Favor a recognizable Thunderridge school identity and familiar navigation patterns.
+- Make football program information easy to scan and locate.
+- Keep registration, schedules, and merchandise reservations prominent.
+- Support both high school and Grid Kids audiences without obscuring which program information is being viewed.
+- Treat this document as a working brief; revise it as the team and client provide feedback.
+
+## Open Questions
+
+- Which specific visual elements and navigation patterns from the reference site should carry over?
+- How should the high school and Grid Kids programs be separated or connected in the navigation?
+- Which pages and interactions should be represented in the Module 1 presentation demo?
+- What branding assets, approved photos, or content will the client provide?

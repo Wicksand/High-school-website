@@ -30,7 +30,10 @@ Known core needs include:
 
 ## Visual References
 
-No visual references have been selected yet. The team will provide references to guide the detailed visual style.
+- The Thunderridge Football Booster Club logo uses black and blue.
+- The Thunderridge High School website uses a charcoal navigation treatment, white content areas, and royal-blue Titan accents: https://www.thunderridgetitans.com/
+
+Use black/charcoal, blue, white, and cool gray as the shared brand palette. Additional references for the app-specific visual style are still pending.
 
 ## Open Questions
 

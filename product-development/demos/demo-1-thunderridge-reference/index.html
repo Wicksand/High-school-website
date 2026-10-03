@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111b2a">
+  <title>Thunder Ridge Football | Demo 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="district-bar"><div class="wrap district-inner"><span>THUNDER RIDGE FOOTBALL BOOSTER CLUB</span><a href="#updates">Community updates</a></div></div>
+  <header class="site-header">
+    <div class="wrap header-main">
+      <a class="brand" href="#home" aria-label="Thunder Ridge Football home"><span class="brand-mark">TR</span><span><strong>THUNDER RIDGE</strong><small>FOOTBALL · TITANS</small></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="#programs">Programs</a><a href="#schedule">Schedules</a><a href="#registration">Registration</a><a href="#spiritwear">Spiritwear</a><a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-content">
+        <p class="eyebrow">HOME OF THE TITANS</p>
+        <h1 id="hero-title">Built together.<br><span>Played with pride.</span></h1>
+        <p class="hero-copy">One football community, from the first whistle to Friday night lights.</p>
+        <div class="hero-actions"><a class="button button-light" href="#schedule">Explore schedules</a><a class="hero-link" href="#programs">Meet our programs <span aria-hidden="true">→</span></a></div>
+      </div>
+      <div class="hero-caption"><span>THUNDER RIDGE · IDAHO FALLS</span><span>HIGH SCHOOL + GRID KIDS</span></div>
+    </section>
+    <div class="quick-strip" aria-label="Quick links"><a href="#registration"><span>01</span>Registration</a><a href="#schedule"><span>02</span>Team schedules</a><a href="#spiritwear"><span>03</span>Merchandise</a><a href="#updates"><span>04</span>Club updates</a></div>
+    <section id="updates" class="section announcement-section">
+      <div class="wrap announcement-grid"><div><p class="eyebrow dark-eyebrow">FROM THE BOOSTER CLUB</p><h2 id="announcement-title">Together for every Titan.</h2></div><p id="announcement-copy">Welcome to the football home for Thunderridge families. Find team schedules, program information, registration, and spiritwear reservations in one place.</p></div>
+    </section>
+    <section id="schedule" class="section schedule-section">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow dark-eyebrow">ON THE CALENDAR</p><h2>Game days &amp; events</h2></div><div class="view-toggle" role="group" aria-label="Schedule view"><button class="is-active" type="button" data-view="list" aria-pressed="true">List</button><button type="button" data-view="calendar" aria-pressed="false">Calendar</button></div></div>
+        <div class="schedule-controls"><label for="team-filter">Show program</label><select id="team-filter"><option value="all">All programs</option><option value="high-school">High school</option><option value="grid-kids">Grid Kids</option></select><span class="sample-label">Illustrative demo events · confirm dates with the club</span></div>
+        <div id="schedule-list" class="schedule-list">
+          <article class="event-row" data-program="high-school"><time datetime="2026-10-09"><span>OCT</span><strong>09</strong></time><div><span class="event-type">HIGH SCHOOL · SAMPLE</span><h3>Friday Night Football</h3><p>Thunderridge Titans · Home game</p></div><span class="event-time">7:00 PM</span></article>
+          <article class="event-row" data-program="grid-kids"><time datetime="2026-10-10"><span>OCT</span><strong>10</strong></time><div><span class="event-type">GRID KIDS · SAMPLE</span><h3>Grid Kids Game Day</h3><p>Thunderridge Grid Kids · Field assignment TBD</p></div><span class="event-time">TBD</span></article>
+          <article class="event-row" data-program="high-school"><time datetime="2026-10-16"><span>OCT</span><strong>16</strong></time><div><span class="event-type">HIGH SCHOOL · SAMPLE</span><h3>Friday Night Football</h3><p>Thunderridge Titans · Away game</p></div><span class="event-time">7:00 PM</span></article>
+        </div>
+        <div id="schedule-calendar" class="calendar-view" hidden aria-live="polite"></div>
+      </div>
+    </section>
+    <section id="programs" class="section programs-section">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow dark-eyebrow">ONE COMMUNITY, ALL AGES</p><h2>Find your team</h2></div><p class="section-intro">Two programs. Eighteen teams. A place for every player to grow.</p></div>
+        <div class="program-columns"><article class="program-block high-school-block"><span class="program-kicker">GRADES 9–12</span><h3>Thunderridge<br>High School Football</h3><p>Four grades, two teams at each grade level.</p><div class="grade-list"><span>Grade 9 <b>2 teams</b></span><span>Grade 10 <b>2 teams</b></span><span>Grade 11 <b>2 teams</b></span><span>Grade 12 <b>2 teams</b></span></div><a href="#schedule">View schedules <span aria-hidden="true">→</span></a></article><article class="program-block grid-block"><span class="program-kicker">GRADES 4–8</span><h3>Thunderridge<br>Grid Kids Football</h3><p>Youth football for the next generation of Titans.</p><div class="grade-list"><span>Grade 4 <b>2 teams</b></span><span>Grade 5 <b>2 teams</b></span><span>Grade 6 <b>2 teams</b></span><span>Grade 7 <b>2 teams</b></span><span>Grade 8 <b>2 teams</b></span></div><a href="#schedule">View schedules <span aria-hidden="true">→</span></a></article></div>
+      </div>
+    </section>
+    <section id="registration" class="section registration-section">
+      <div class="wrap form-layout"><div class="form-intro"><p class="eyebrow">JOIN THE TEAM</p><h2>Registration starts here.</h2><p>Share your family's contact information and the program you're interested in. This presentation demo does not send or save participant information.</p><div class="form-note">Registration details and the final submission process are pending confirmation with the club.</div></div><form id="registration-form" class="club-form"><div class="form-row"><label>Parent or guardian name<input name="guardian" autocomplete="name" required></label><label>Email address<input name="email" type="email" autocomplete="email" required></label></div><div class="form-row"><label>Participant name<input name="participant" required></label><label>Program<select name="program" required><option value="">Choose a program</option><option>High School Football</option><option>Grid Kids Football</option></select></label></div><label>Grade<select name="grade" required><option value="">Choose a grade</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select></label><button class="button button-red" type="submit">Preview registration</button><p class="form-feedback" aria-live="polite"></p></form></div>
+    </section>
+    <section id="spiritwear" class="section spirit-section">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow dark-eyebrow">SHOW YOUR COLORS</p><h2>Spiritwear reservations</h2></div><p class="section-intro">Reserve gear for pickup. No payment is taken on this website.</p></div>
+        <div class="merch-layout"><div class="merch-items"><article class="merch-item"><span class="merch-number">01</span><div><h3>Titans sideline hoodie</h3><p>Adult and youth sizes · Sample item</p></div><span class="merch-price">Reserve</span></article><article class="merch-item"><span class="merch-number">02</span><div><h3>Football spirit tee</h3><p>Adult and youth sizes · Sample item</p></div><span class="merch-price">Reserve</span></article><article class="merch-item"><span class="merch-number">03</span><div><h3>Grid Kids cap</h3><p>One size · Sample item</p></div><span class="merch-price">Reserve</span></article></div><form id="reservation-form" class="reservation-form"><p class="eyebrow dark-eyebrow">RESERVATION REQUEST</p><label>Your name<input name="name" autocomplete="name" required></label><label>Email address<input name="email" type="email" autocomplete="email" required></label><label>Item<select name="item" required><option value="">Select an item</option><option>Titans sideline hoodie</option><option>Football spirit tee</option><option>Grid Kids cap</option></select></label><label>Quantity<input name="quantity" type="number" min="1" max="10" value="1" required></label><button class="button button-dark" type="submit">Preview reservation</button><p class="form-note">Reservation only. No checkout or payment.</p><p class="form-feedback" aria-live="polite"></p></form></div>
+      </div>
+    </section>
+    <section id="about" class="community-band"><div class="wrap community-inner"><div><p class="eyebrow">TITANS TOGETHER</p><h2>Friday nights are<br>better together.</h2></div><div><p>Follow the Booster Club for community updates, program news, and the latest from the sidelines.</p><a href="https://www.facebook.com/p/Thunder-Ridge-Football-Booster-Club-61588914284261/" target="_blank" rel="noreferrer">Facebook <span aria-hidden="true">↗</span></a><a href="https://www.instagram.com/thunderridge_football/" target="_blank" rel="noreferrer">Instagram <span aria-hidden="true">↗</span></a></div></div></section>
+    <section id="admin" class="section admin-section"><div class="wrap admin-wrap"><div class="admin-heading"><div><p class="eyebrow dark-eyebrow">PRESENTATION CONCEPT</p><h2>Content manager preview</h2></div><span class="demo-tag">DEMO ONLY · NO LOGIN</span></div><p>This local preview shows how a club administrator might update announcements. Changes stay in this browser only; this is not a secured or connected admin system.</p><form id="admin-form" class="admin-form"><label>Announcement headline<input name="title" id="admin-title" value="Together for every Titan."></label><label>Announcement text<textarea name="copy" id="admin-copy" rows="3">Welcome to the football home for Thunderridge families. Find team schedules, program information, registration, and spiritwear reservations in one place.</textarea></label><button class="button button-dark" type="submit">Update announcement preview</button><p class="form-feedback" aria-live="polite"></p></form></div></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="brand brand-footer" href="#home"><span class="brand-mark">TR</span><span><strong>THUNDER RIDGE FOOTBALL</strong><small>BOOSTER CLUB · DEMO 1</small></span></a><p>Presentation concept. Sample content and events require club confirmation.</p><a href="#admin">Admin preview</a></div></footer>
+</body>
+</html>

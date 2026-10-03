@@ -8,6 +8,10 @@ Design this demo to feel familiar to users of the Idaho Falls Thunderridge High 
 
 - Thunderridge High School: https://www.thunderridgetitans.com/
 
+## Color Direction
+
+Use a black/charcoal, Titan blue, and white palette that reflects both the Booster Club logo and the school website. The school reference uses a dark navigation bar, white content areas, and royal-blue Titan accents. Use cool gray neutrals for supporting surfaces; avoid introducing unrelated red as a primary accent.
+
 ## Demo Purpose
 
 Present a website concept for the Thunderridge High School Football Booster Club that builds on familiar Thunderridge school web conventions. The demo should communicate how football-related information and actions could be organized for the high school program and Grid Kids audience.

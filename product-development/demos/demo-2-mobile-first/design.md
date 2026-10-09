@@ -6,11 +6,11 @@ Design this demo to feel more like a simple mobile app than a traditional school
 
 ## Demo Purpose
 
-Present an alternative concept for the Thunderridge High School Football Booster Club website. Explore how a mobile-first, app-style layout could make schedules, registration, and merchandise reservations easy to access for families and supporters.
+Present an alternative concept for the Thunder Ridge High School Football Booster Club website. Explore how a mobile-first, app-style layout could make schedules, registration, and merchandise reservations easy to access for families and supporters.
 
 ## Project Context
 
-The overall project serves students, families, boosters, contributors, and school district members. It is expected to support Thunderridge High School Football (grades 9-12) and Thunderridge Grid Kids Football (grades 4-8).
+The overall project serves students, families, boosters, contributors, and school district members. It is expected to support Thunder Ridge High School Football (grades 9-12) and Thunder Ridge Grid Kids Football (grades 4-8).
 
 Known core needs include:
 
@@ -30,8 +30,8 @@ Known core needs include:
 
 ## Visual References
 
-- The Thunderridge Football Booster Club logo uses black and blue.
-- The Thunderridge High School website uses a charcoal navigation treatment, white content areas, and royal-blue Titan accents: https://www.thunderridgetitans.com/
+- The Thunder Ridge Football Booster Club logo uses black and blue.
+- The Thunder Ridge High School website uses a charcoal navigation treatment, white content areas, and royal-blue Titan accents: https://www.thunderridgetitans.com/
 
 Use black/charcoal, blue, white, and cool gray as the shared brand palette. Additional references for the app-specific visual style are still pending.
 
@@ -40,4 +40,4 @@ Use black/charcoal, blue, white, and cool gray as the shared brand palette. Addi
 - Which mobile apps or websites should inform the visual style and interaction patterns?
 - What navigation model should the demo explore?
 - Which screens and interactions should be represented in the Module 1 presentation demo?
-- Should this concept share Thunderridge branding with Demo 1 or explore a distinct visual direction?
+- Should this concept share Thunder Ridge branding with Demo 1 or explore a distinct visual direction?

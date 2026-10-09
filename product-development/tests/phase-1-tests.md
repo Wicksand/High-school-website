@@ -7,7 +7,7 @@
 - Unique testers recorded: 4
 - Required minimum: 5
 - Status: More testing is still needed to meet the phase requirement.
-- Raw testing records: [WDD199 Thunderridge High School Football Booster Club Testing Sheet](https://docs.google.com/spreadsheets/d/1NrZoWd42R0N3G9t8Xtk7YY0z3B3xv16CgUtdYgka31c/edit?gid=0#gid=0)
+- Raw testing records: [WDD199 Thunder Ridge High School Football Booster Club Testing Sheet](https://docs.google.com/spreadsheets/d/1NrZoWd42R0N3G9t8Xtk7YY0z3B3xv16CgUtdYgka31c/edit?gid=0#gid=0)
 
 ## Testers
 
@@ -46,4 +46,3 @@
 - Record the testing date and test tasks in the spreadsheet when available.
 - Confirm the final navigation direction with the team and client.
 - Use the feedback to refine the demos before the next phase.
-

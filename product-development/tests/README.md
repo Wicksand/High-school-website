@@ -1,6 +1,6 @@
 # Project Testing Files
 
-This folder stores the testing record for the Thunderridge High School Football Booster Club website.
+This folder stores the testing record for the Thunder Ridge High School Football Booster Club website.
 
 ## Folder Structure
 
@@ -29,4 +29,3 @@ The shared Google Spreadsheet is the source for the raw testing records. Summari
 4. Review the tested design or feature and separate observations from proposed changes.
 5. Use the findings together with the formal requirements and meeting notes before recommending implementation changes.
 6. Add new phase results to the existing phase file instead of creating duplicate files.
-

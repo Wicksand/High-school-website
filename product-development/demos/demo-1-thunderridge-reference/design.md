@@ -1,8 +1,8 @@
-# Demo 1: Thunderridge Website Familiarity
+# Demo 1: Thunder Ridge Website Familiarity
 
 ## Design Direction
 
-Design this demo to feel familiar to users of the Idaho Falls Thunderridge High School website. Use the school site as the primary visual and interaction reference so students, families, and supporters can recognize the local school identity and navigate the demo comfortably.
+Design this demo to feel familiar to users of the Idaho Falls Thunder Ridge High School website. Use the school site as the primary visual and interaction reference so students, families, and supporters can recognize the local school identity and navigate the demo comfortably.
 
 ## Reference
 
@@ -14,11 +14,11 @@ Use a black/charcoal, Titan blue, and white palette that reflects both the Boost
 
 ## Demo Purpose
 
-Present a website concept for the Thunderridge High School Football Booster Club that builds on familiar Thunderridge school web conventions. The demo should communicate how football-related information and actions could be organized for the high school program and Grid Kids audience.
+Present a website concept for the Thunder Ridge High School Football Booster Club that builds on familiar Thunder Ridge school web conventions. The demo should communicate how football-related information and actions could be organized for the high school program and Grid Kids audience.
 
 ## Project Context
 
-The overall project is a website for the Thunderridge High School Football Booster Club, serving students, families, boosters, contributors, and school district members. The planned scope includes Thunderridge High School Football (grades 9-12) and Thunderridge Grid Kids Football (grades 4-8).
+The overall project is a website for the Thunder Ridge High School Football Booster Club, serving students, families, boosters, contributors, and school district members. The planned scope includes Thunder Ridge High School Football (grades 9-12) and Thunder Ridge Grid Kids Football (grades 4-8).
 
 Key needs identified so far include:
 
@@ -29,7 +29,7 @@ Key needs identified so far include:
 
 ## Design Principles
 
-- Favor a recognizable Thunderridge school identity and familiar navigation patterns.
+- Favor a recognizable Thunder Ridge school identity and familiar navigation patterns.
 - Make football program information easy to scan and locate.
 - Keep registration, schedules, and merchandise reservations prominent.
 - Support both high school and Grid Kids audiences without obscuring which program information is being viewed.

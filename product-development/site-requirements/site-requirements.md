@@ -9,7 +9,7 @@ This site requires the following core capabilities:
 - merchandise reservation functionality
 - an admin page to update content and information across the website
 
-These features form the foundation of the user experience and the administrative workflow for the Thunderridge Football Booster Club website.
+These features form the foundation of the user experience and the administrative workflow for the Thunder Ridge Football Booster Club website.
 
 ## Functional Requirements
 
@@ -89,7 +89,7 @@ Requirements:
 - merchandise reservations are informational and logistical, not transactional
 - the Grid Kids program may require a separate account or workflow from the high school football booster account
 - content from existing Facebook and Instagram pages may be used as a foundation for updated site information
-- the final product should support both the Thunderridge High School program and the Grid Kids football audience
+- the final product should support both the Thunder Ridge High School program and the Grid Kids football audience
 
 ## Acceptance Criteria
 

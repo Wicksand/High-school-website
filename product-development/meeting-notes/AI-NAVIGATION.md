@@ -1,6 +1,6 @@
 # AI Navigation Guide for Meeting Notes
 
-This folder contains notes from meetings about the Thunderridge High School Football Booster Club website.
+This folder contains notes from meetings about the Thunder Ridge High School Football Booster Club website.
 
 ## How to Use This Folder
 
@@ -27,4 +27,3 @@ When summarizing or implementing from meeting notes, look for:
 - decisions that affect a particular demo or project phase
 
 Meeting notes are contextual evidence. They should be used with the formal requirements and schedule, not as a substitute for either document.
-

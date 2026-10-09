@@ -4,7 +4,7 @@
 
 This project is a real-world website created by a three-person student team in the course at https://byui-cse.github.io/wdd-x99-course/. The team consists of Joshua, Samantha, and Andrew.
 
-The product is a website for the Thunderridge High School Football Booster Club. It will serve as a central hub for information, communication, and event-related tools for football activities at Thunderridge High School and the associated Grid Kids football program.
+The product is a website for the Thunder Ridge High School Football Booster Club. It will serve as a central hub for information, communication, and event-related tools for football activities at Thunder Ridge High School and the associated Grid Kids football program.
 
 ## Primary Purpose
 
@@ -22,14 +22,14 @@ It will help users stay informed about football-related events, schedules, regis
 
 The site will cover information related to:
 
-- Thunderridge High School Football (grades 9-12)
-- Thunderridge Grid Kids Football (grades 4-8)
+- Thunder Ridge High School Football (grades 9-12)
+- Thunder Ridge Grid Kids Football (grades 4-8)
 
 There are currently two football teams for each grade level, which results in a total of 18 teams across the program. Because of this structure, the site needs to be organized in a way that is easy to navigate for multiple age groups, programs, and family types.
 
 ## Client and Stakeholder Context
 
-This project is being developed for a real client representing the Thunderridge High School Football Booster Club. The relationship includes coordination with the organization behind the football programs and the associated youth group.
+This project is being developed for a real client representing the Thunder Ridge High School Football Booster Club. The relationship includes coordination with the organization behind the football programs and the associated youth group.
 
 The client has indicated that the new website should make critical tasks easier and more streamlined for families and organizers, especially around registration, scheduling, and merchandise reservations.
 
@@ -87,6 +87,6 @@ The team will focus on the following early priorities:
 
 ## Product Direction
 
-The website should feel trustworthy, organized, and community-focused. It should stand as a polished representation of the Thunderridge football program and help bring together the school-level and youth-level football audiences under one clearer digital experience.
+The website should feel trustworthy, organized, and community-focused. It should stand as a polished representation of the Thunder Ridge football program and help bring together the school-level and youth-level football audiences under one clearer digital experience.
 
 This project will act as the baseline for the website development work that follows, including planning, design, and implementation of the final solution.

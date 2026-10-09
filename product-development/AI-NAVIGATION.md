@@ -1,6 +1,6 @@
 # AI Navigation Guide
 
-This file explains how an AI agent should navigate the `product-development` folder when working on the Thunderridge High School Football Booster Club website.
+This file explains how an AI agent should navigate the `product-development` folder when working on the Thunder Ridge High School Football Booster Club website.
 
 ## Start Here
 
@@ -31,4 +31,3 @@ Read the files in this order when broad project context is needed:
 - Do not treat sample events, merchandise, or copy as confirmed client content.
 - When new evidence conflicts with older notes, preserve the history and record the newer information in the appropriate note or test file.
 - Avoid placing implementation code or unrelated drafts in this folder.
-

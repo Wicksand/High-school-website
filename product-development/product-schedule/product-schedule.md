@@ -29,6 +29,10 @@ As this is a university project, the team meets every Friday to collaborate on t
 
 ## Development Focus by Phase
 
+### Testing Requirement
+
+During each phase of the project, the team must have at least five people test the current version of the project. The team should use different testers for each phase whenever possible so that the project receives feedback from a broader range of users and perspectives.
+
 ### Phase 1: Foundation and Planning
 - review client needs and project goals
 - clarify target audiences and required product features

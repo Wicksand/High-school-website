@@ -8,3 +8,22 @@
 
 .calendar-weekday{display:grid;place-items:center;min-height:22px;padding:0;border:0;background:transparent;color:var(--muted);font-size:8px;font-weight:700}
 .product-swatch.red{background:#2c66b2}.product-swatch.green{background:#131920}
+
+/* Phase 1 feedback: use the shared charcoal/blue identity and reduce mobile side margins. */
+:root{--forest:#111b2a;--forest2:#255da7;--lime:#dce8f7;--coral:#2c66b2}
+body{background:#e4e9f0}
+.welcome::after{background:linear-gradient(90deg,#111b2aed 0%,#111b2abd 46%,#111b2a25 100%)}
+.welcome-copy>p:last-child{color:#e3eaf4}
+.program-summary{background:var(--forest)}
+.program-description{color:#d6e0f0}
+.program-choice.active{border-color:var(--forest);background:var(--forest)}
+.app-section,.program-switch{padding-inline:clamp(16px,4vw,32px)}
+.welcome{padding-inline:clamp(20px,5vw,42px)}
+.program-switch{top:64px}
+.event-details span{background:#edf2f8;color:#334d70}
+.calendar-day.has-event{background:#e8f0fb;border-color:#cbdcf1}
+.spirit-section{background:#eef2f7}
+.reservation-only,.demo-chip{background:#dce8f7;color:#1d4d88}
+.updates-section{background:#dce8f7}
+.updates-section .eyebrow{color:#255da7}
+.admin-section{background:#e9edf3}

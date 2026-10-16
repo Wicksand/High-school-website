@@ -13,51 +13,24 @@ mainNav.addEventListener('click', (event) => {
   }
 });
 
-const scheduleList = document.querySelector('#schedule-list');
-const calendarView = document.querySelector('#schedule-calendar');
-const filter = document.querySelector('#team-filter');
-const scheduleButtons = document.querySelectorAll('[data-view]');
-const eventRows = [...document.querySelectorAll('.event-row')];
+//calender toggle formatting
+const BASE_CALENDAR_URL = 'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FDenver&showPrint=0&src=NTg4YjViMDZiZTBlNjMzNzliZDViODI5OWE1ODdiMzgzOTJjMmI0MzFmOWUzMTc4Y2NlZTYzNWY1M2Y4YzI3ZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%234285f4&color=%230b8043&showTitle=0&showTz=0&showCalendars=0&showTabs=0';
+const calendarFrame = document.querySelector('#calendar-frame');
+const modeButtons = document.querySelectorAll('[data-mode]');
 
-function applyScheduleFilter() {
-  const selectedProgram = filter.value;
-  eventRows.forEach((row) => {
-    row.hidden = selectedProgram !== 'all' && row.dataset.program !== selectedProgram;
+function setCalendarMode(mode) {
+  calendarFrame.src = `${BASE_CALENDAR_URL}&mode=${mode}`;
+  modeButtons.forEach((b) => {
+    const active = b.dataset.mode === mode;
+    b.classList.toggle('is-active', active);
+    b.setAttribute('aria-pressed', String(active));
   });
 }
 
-function renderCalendar() {
-  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  const dates = Array.from({ length: 31 }, (_, index) => index + 1);
-  const leadingDays = Array.from({ length: 4 }, () => '<div class="calendar-cell calendar-empty" aria-hidden="true"></div>').join('');
-  const eventsByDay = { 9: 'High School · Sample', 10: 'Grid Kids · Sample', 16: 'High School · Sample' };
-  const selectedProgram = filter.value;
-  calendarView.innerHTML = `<div class="calendar-grid">${days.map((day) => `<div class="calendar-cell calendar-head">${day}</div>`).join('')}${leadingDays}${dates.map((day) => {
-    const event = eventsByDay[day];
-    const eventProgram = event?.startsWith('Grid') ? 'grid-kids' : 'high-school';
-    const showEvent = event && (selectedProgram === 'all' || eventProgram === selectedProgram);
-    return `<div class="calendar-cell"><strong>Oct ${day}</strong>${showEvent ? `<span>${event}</span>` : ''}</div>`;
-  }).join('')}</div>`;
-}
+modeButtons.forEach((b) => b.addEventListener('click', () => setCalendarMode(b.dataset.mode)));
+setCalendarMode('AGENDA');
+//--------------------------------
 
-scheduleButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const showCalendar = button.dataset.view === 'calendar';
-    scheduleList.hidden = showCalendar;
-    calendarView.hidden = !showCalendar;
-    scheduleButtons.forEach((item) => {
-      const active = item === button;
-      item.classList.toggle('is-active', active);
-      item.setAttribute('aria-pressed', String(active));
-    });
-    if (showCalendar) renderCalendar();
-  });
-});
-
-filter.addEventListener('change', () => {
-  applyScheduleFilter();
-  if (!calendarView.hidden) renderCalendar();
-});
 
 function showDemoFeedback(form, message) {
   form.querySelector('.form-feedback').textContent = message;

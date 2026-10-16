@@ -30,3 +30,17 @@ body .hero h1 span{color:#c4dbf7}
     height: 520px;
   }
 }
+
+
+<!-- detele these later
+#temp_button{
+    margin-top: 0;
+
+}
+#box{
+    display:flex;
+    align-items: center;
+    justify-content: center;   /* horizontal, remove if you don't want it */
+    min-height: 100%;
+
+}

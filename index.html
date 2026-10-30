@@ -242,5 +242,24 @@
     <!-- <section id="admin" class="section admin-section"><div class="wrap admin-wrap"><div class="admin-heading"><div><p class="eyebrow dark-eyebrow">PRESENTATION CONCEPT</p><h2>Content manager preview</h2></div><span class="demo-tag">DEMO ONLY · NO LOGIN</span></div><p>This local preview shows how a club administrator might update announcements. Changes stay in this browser only; this is not a secured or connected admin system.</p><form id="admin-form" class="admin-form"><label>Announcement headline<input name="title" id="admin-title" value="Together for every Titan."></label><label>Announcement text<textarea name="copy" id="admin-copy" rows="3">Welcome to the football home for Thunder Ridge families. Find team schedules, program information, registration, and spiritwear reservations in one place.</textarea></label><button class="button button-dark" type="submit">Update announcement preview</button><p class="form-feedback" aria-live="polite"></p></form></div></section> -->
   </main>
   <footer class="site-footer"><div class="wrap footer-inner"><a class="brand brand-footer" href="#home"><span class="brand-mark">TR</span><span><strong>THUNDER RIDGE FOOTBALL</strong><small>BOOSTER CLUB</small></span></a></div></footer>
+  <!-- This script acts as a dynamic background color changer based on the scroll position. It makes the color above and beyond the header the same white as the header and the color below the footer the same dark as the footer. -->
+  <script>
+    (() => {
+      const updateEdgeBackground = () => {
+        const root = document.documentElement;
+        const page = document.body;
+        const maxScroll = root.scrollHeight - window.innerHeight;
+        const atBottom = maxScroll > 0 && window.scrollY >= maxScroll - 1;
+        const color = atBottom ? '#090f18' : '#fff';
+
+        root.style.background = color;
+        page.style.background = color;
+      };
+
+      window.addEventListener('scroll', updateEdgeBackground, { passive: true });
+      window.addEventListener('resize', updateEdgeBackground);
+      updateEdgeBackground();
+    })();
+  </script>
 </body>
 </html>

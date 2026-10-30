@@ -14,7 +14,11 @@ mainNav.addEventListener('click', (event) => {
 });
 
 //calender toggle formatting
-const BASE_CALENDAR_URL = 'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FDenver&showPrint=0&src=NTg4YjViMDZiZTBlNjMzNzliZDViODI5OWE1ODdiMzgzOTJjMmI0MzFmOWUzMTc4Y2NlZTYzNWY1M2Y4YzI3ZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%234285f4&color=%230b8043&showTitle=0&showTz=0&showCalendars=0&showTabs=0';
+const BASE_CALENDAR_URL =
+  'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FDenver' +
+  '&showPrint=0&showTitle=0&showTz=0&showCalendars=0&showTabs=0' +
+  '&src=2f44636265e780f9fbdb2090ecfddbbf59966596b7cd7b0e3a15a4cfd75b072a%40group.calendar.google.com' +
+  '&color=%234285f4';
 const calendarFrame = document.querySelector('#calendar-frame');
 const modeButtons = document.querySelectorAll('[data-mode]');
 

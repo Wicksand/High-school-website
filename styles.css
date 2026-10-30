@@ -723,10 +723,19 @@ h1,
 }
 
 .community-inner>div:last-child a {
-  display: inline-block;
-  margin-right: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-right: 12px;
   color: #c4dbf7;
-  font-weight: 700;
+}
+
+.community-inner>div:last-child a svg {
+  display: block;
+  width: 24px;
+  height: 24px;
 }
 
 .admin-section {

@@ -73,7 +73,7 @@ if (savedAnnouncement) {
 // ===== Google Sheet content =====
 // Add new tabs here later (gallery, store) as more lines
 const SHEETS = {
-  announcement: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRpR65P6FPVrzobb4_eC35CWwX4ur71a-xhB68aG-rQoRHqdwOpy4BbwtLN8pbjohPX9J91557W-CCd/pub?gid=0&single=true&output=csv'
+  announcement: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTbuSz2W3-9TrBprkb3iMMsOYp5wBmMDHrBJVXlA_JiE3yUgmEyAVZjR0CTnjHuxtz7Tbhdp8PzNKjC/pub?gid=0&single=true&output=csv'
 };
 
 // --- Shared helpers (reused by every section) ---

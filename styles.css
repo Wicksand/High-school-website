@@ -251,6 +251,9 @@ h1,
 }
 
 .quick-strip {
+  position: sticky;
+  top: 83px;
+  z-index: 4;
   display: grid;
   grid-template-columns: repeat(4,1fr);
   background: var(--navy);
@@ -824,6 +827,10 @@ h1,
 }
 
 @media (max-width: 800px) {
+  .quick-strip {
+    top: 72px;
+  }
+
   .wrap {
     width: min(var(--wrap),calc(100% - 36px));
   }

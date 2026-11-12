@@ -1,7 +1,7 @@
 // ===== SETTINGS: the only things you need to edit =====
 
 // 1) Published CSV link of the "store" tab of your Google Sheet
-const STORE_SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTbuSz2W3-9TrBprkb3iMMsOYp5wBmMDHrBJVXlA_JiE3yUgmEyAVZjR0CTnjHuxtz7Tbhdp8PzNKjC/pubhtml?gid=984481950&single=true';
+const STORE_SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTbuSz2W3-9TrBprkb3iMMsOYp5wBmMDHrBJVXlA_JiE3yUgmEyAVZjR0CTnjHuxtz7Tbhdp8PzNKjC/pub?gid=984481950&single=true&output=csv';
 
 // 2) Google Form that receives reservations (its responses land in a sheet).
 //    action = the form's link with /viewform replaced by /formResponse

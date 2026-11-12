@@ -2,6 +2,20 @@
 
 This folder contains notes from meetings about the Thunder Ridge High School Football Booster Club website.
 
+## New Meeting Note Workflow
+
+When the user asks to create a new meeting note, use the `meeting-notes` skill. Do not create a note automatically from an ordinary conversation or summary request.
+
+Before creating a note:
+
+1. Read this guide and the latest existing meeting note.
+2. Identify the next unused numbered filename, such as `m3.md`.
+3. Ask concise clarifying questions for missing details, including the date, meeting format, attendees, discussion, decisions, open questions, and next steps.
+4. Create the new note as a separate Markdown file in this folder. Never overwrite an earlier note.
+5. Preserve uncertainty and distinguish confirmed decisions from pending information.
+6. Update the `Current Notes` list below after adding the file.
+7. Reread this guide before taking any further action in `product-development/`.
+
 ## How to Use This Folder
 
 1. Read the relevant meeting note before making assumptions about client needs, program scope, branding, or workflows.
@@ -14,6 +28,7 @@ This folder contains notes from meetings about the Thunder Ridge High School Foo
 ## Current Notes
 
 - `m1.md` contains the first meeting notes from September 29, 2026.
+- `m2.md` contains the second meeting notes from October 30, 2026.
 
 ## What to Extract
 

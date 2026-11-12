@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111b2a">
+  <title>Spiritwear · Thunder Ridge Football</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="store.css">
+  <script src="store.js" defer></script>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap header-main">
+      <a class="brand" href="index.html#home" aria-label="Thunder Ridge Football home"><span class="brand-mark">TR</span><span><strong>THUNDER RIDGE</strong><small>FOOTBALL · TITANS</small></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="index.html#schedule">Calendar</a>
+        <a href="index.html#programs">Teams</a>
+        <a href="index.html#registration">Registration</a>
+        <a href="store.html" aria-current="page">Spiritwear</a>
+        <a href="index.html#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero" aria-labelledby="store-title">
+      <div class="wrap">
+        <p class="eyebrow">SHOW YOUR COLORS</p>
+        <h1 id="store-title">Spiritwear</h1>
+        <p class="page-hero-copy">Reserve gear for pickup. No payment is taken on this website.</p>
+      </div>
+    </section>
+
+    <section class="section store-section">
+      <div class="wrap">
+        <div id="store-grid" class="store-grid" aria-live="polite">
+          <p class="store-status">Loading items…</p>
+        </div>
+        <p class="store-note">Reservations are held for pickup. The Booster Club will contact you with pickup details and payment instructions.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reservation pop-up -->
+  <dialog id="reserve-dialog" class="reserve-dialog" aria-labelledby="reserve-title">
+    <form id="reserve-form" class="reserve-form">
+      <div class="reserve-head">
+        <div>
+          <p class="eyebrow dark-eyebrow">RESERVATION REQUEST</p>
+          <h2 id="reserve-title">Item</h2>
+        </div>
+        <button type="button" class="reserve-close" aria-label="Close">×</button>
+      </div>
+
+      <label>Your name<input name="name" autocomplete="name" required></label>
+      <label>Email address<input name="email" type="email" autocomplete="email" required></label>
+      <div class="form-row">
+        <label id="size-field">Size<select name="size"></select></label>
+        <label>Quantity<input name="quantity" type="number" min="1" max="10" value="1" required></label>
+      </div>
+      <label>Notes (optional)<input name="notes" placeholder="Player name, number, etc."></label>
+
+      <button class="button button-dark" type="submit">Reserve</button>
+      <p class="form-feedback" aria-live="polite"></p>
+    </form>
+  </dialog>
+
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="brand brand-footer" href="index.html#home"><span class="brand-mark">TR</span><span><strong>THUNDER RIDGE FOOTBALL</strong><small>BOOSTER CLUB</small></span></a></div></footer>
+</body>
+</html>

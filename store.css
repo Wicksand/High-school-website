@@ -1,0 +1,218 @@
+/* Storefront page — builds on the variables and components in styles.css */
+
+body {
+  background: #fff;
+}
+
+.page-hero {
+  padding-block: 64px;
+  color: #fff;
+  background: linear-gradient(90deg, rgba(9,15,25,.96), rgba(17,27,42,.85)), #111b2a;
+}
+
+.page-hero .eyebrow {
+  color: #c4dbf7;
+}
+
+.page-hero h1 {
+  margin-bottom: 10px;
+  font: 800 clamp(48px, 7vw, 76px)/.9 var(--display);
+  letter-spacing: .015em;
+  text-transform: uppercase;
+}
+
+.page-hero-copy {
+  max-width: 520px;
+  margin: 0;
+  color: #e4e7eb;
+  font-size: 18px;
+}
+
+.main-nav a[aria-current="page"] {
+  color: var(--red);
+}
+
+.store-section {
+  background: var(--paper);
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.store-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+}
+
+.store-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--red);
+}
+
+.store-photo {
+  aspect-ratio: 4 / 5;
+  background: #e9ecf0;
+  overflow: hidden;
+}
+
+.store-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.store-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 18px 20px 20px;
+}
+
+.store-body h3 {
+  margin: 0 0 4px;
+  font: 600 26px/1.05 var(--display);
+  text-transform: uppercase;
+}
+
+.store-price {
+  margin: 0 0 8px;
+  color: var(--red);
+  font: 700 22px/1 var(--display);
+  letter-spacing: .02em;
+}
+
+.store-desc {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.store-sizes {
+  margin: 0 0 16px;
+  color: #566170;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.store-body .button {
+  margin-top: auto;
+}
+
+.store-card.is-soldout .store-photo img {
+  opacity: .45;
+  filter: grayscale(1);
+}
+
+.button:disabled {
+  background: #d9dde1;
+  color: #657181;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.store-note {
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Reservation dialog */
+.reserve-dialog {
+  width: min(460px, calc(100% - 30px));
+  padding: 0;
+  border: 0;
+  border-top: 4px solid var(--red);
+  color: var(--ink);
+}
+
+.reserve-dialog::backdrop {
+  background: rgba(9, 15, 25, .65);
+}
+
+.reserve-form {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+}
+
+.reserve-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.reserve-head .eyebrow {
+  margin-bottom: 4px;
+}
+
+.reserve-head h2 {
+  margin: 0;
+  font: 700 32px/1 var(--display);
+  text-transform: uppercase;
+}
+
+.reserve-close {
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.reserve-form label {
+  display: grid;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.reserve-form input,
+.reserve-form select {
+  min-height: 42px;
+  width: 100%;
+  border: 1px solid #c8cdd2;
+  background: #fff;
+  padding: 8px 10px;
+  color: var(--ink);
+}
+
+.reserve-form .form-feedback {
+  color: var(--red-dark);
+}
+
+@media (max-width: 560px) {
+  .page-hero {
+    padding-block: 46px;
+  }
+
+  .store-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .store-body {
+    padding: 12px 12px 14px;
+  }
+
+  .store-body h3 {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 380px) {
+  .store-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -45,6 +45,6 @@ Read the files in this order when broad project context is needed:
 - Keep sample/demo behavior distinct from production functionality. The current demos do not send forms or provide a real secured admin system.
 - Do not treat sample events, merchandise, or copy as confirmed client content.
 - When changing the homepage or planning a new page, update the corresponding document in `site-map/` so the sitemap and page specifications remain current.
-- The current site has one public-facing page, documented in `site-map/home.md`; its sections are organized as homepage anchors rather than separate pages.
+- The current site has three public-facing pages: the homepage with anchor-based sections, the storefront, and the gallery. See `site-map/site-map.md` and `site-map/home.md` for details.
 - When new evidence conflicts with older notes, preserve the history and record the newer information in the appropriate note or test file.
 - Avoid placing implementation code or unrelated drafts in this folder.

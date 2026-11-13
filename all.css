@@ -1,0 +1,177 @@
+/* Shared header and footer styles used by every site page. */
+
+/* Header layout, brand mark, and primary navigation. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 83px;
+  gap: 28px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 49px;
+  aspect-ratio: 1;
+  color: #fff;
+  background: var(--red);
+  font: 800 22px var(--display);
+  clip-path: polygon(50% 0,100% 17%,91% 73%,50% 100%,9% 73%,0 17%);
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font: 700 23px/1 var(--display);
+  letter-spacing: .03em;
+}
+
+.brand small {
+  margin-top: 5px;
+  color: #566170;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px,2.7vw,38px);
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible,
+.main-nav a[aria-current="page"] {
+  color: var(--red);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* Shared branded footer and external school links. */
+.site-footer {
+  padding-block: 22px;
+  background: #090f18;
+  color: #fff;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand-footer .brand-mark {
+  width: 39px;
+  font-size: 18px;
+}
+
+.brand-footer strong {
+  font-size: 19px;
+}
+
+.brand-footer small {
+  color: #b9c0c9;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footer-links a {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: #c4dbf7;
+}
+
+/* Shared responsive header and footer behavior. */
+@media (max-width: 800px) {
+  .header-main {
+    min-height: 72px;
+  }
+
+  .menu-toggle {
+    display: block;
+    padding: 9px 12px;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    align-items: stretch;
+    gap: 0;
+    padding: 7px 18px 14px;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .main-nav.is-open {
+    display: grid;
+  }
+
+  .main-nav a {
+    padding: 12px;
+    border-top: 1px solid #eceef0;
+  }
+
+  .brand strong {
+    font-size: 20px;
+  }
+
+  .brand small {
+    font-size: 9px;
+  }
+
+  .brand-mark {
+    width: 42px;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

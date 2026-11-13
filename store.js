@@ -18,15 +18,6 @@ const RESERVE_FORM = {
   }
 };
 
-// ===== Mobile menu =====
-const menuButton = document.querySelector('.menu-toggle');
-const mainNav = document.querySelector('#main-nav');
-
-menuButton.addEventListener('click', () => {
-  const isOpen = mainNav.classList.toggle('is-open');
-  menuButton.setAttribute('aria-expanded', String(isOpen));
-});
-
 // ===== Sheet helpers (same as script.js) =====
 function parseCSV(text) {
   const rows = []; let row = [], cell = '', inQ = false;

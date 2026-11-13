@@ -12,16 +12,16 @@ Provide a clear, welcoming starting point for Thunder Ridge football families, p
 
 The homepage is currently a single page made of vertically ordered sections. The following describes the page from the top of the screen to the bottom:
 
-1. **Site header and navigation** — Displays the Thunder Ridge Football brand, a mobile menu control, and a brand/logo link back to the homepage. The intended primary navigation links are currently commented out and are not visible.
+1. **Site header and navigation** — Loaded with the shared footer from `all.js` and styled with `all.css`. It displays the Thunder Ridge Football brand, a mobile “Site Menu” control, and links to Home, Storefront, and Gallery.
 2. **Hero area** — Introduces the football program with the primary message “One Team. One Ridge.” and establishes the team-focused visual identity.
-3. **Quick-link strip** — Provides fast access to the main portions of the page: latest update, calendars, teams, registration, and about. On mobile, these links should remain easy to tap and scan.
+3. **Quick-link strip** — Provides fast access to the main portions of the page: latest update, calendars, teams, registration, and about. It appears below the hero on desktop and above the hero on mobile, where it collapses into a sticky “Page Menu” control after scrolling.
 4. **Booster Club updates** — Presents the latest announcement for families and supporters. The current headline and text can be loaded from a published Google Sheet by `script.js`.
 5. **Schedules and events** — Displays the Google Calendar embed with List and Calendar viewing options for games and other events.
 6. **Programs and teams** — Introduces the High School Football and Grid Kids programs, including their grade ranges and team groupings.
 7. **Registration** — Explains the registration process and links users to the current external Google Form. The local registration form markup is currently commented out, so the page does not collect or save registration data itself. This area is one of the page’s primary calls to action.
 8. **Merchandise reservations** — Planned section for reserving spiritwear. It is currently inactive/commented out and must remain reservation-only rather than functioning as an online checkout.
 9. **About and community section** — Provides a broader message about the football community and supports the public-facing identity of the booster club.
-10. **Footer** — Closes the page with the Thunder Ridge Football Booster Club branding, a link back to the homepage, and external links to the official Thunder Ridge school website and the Bonneville School District 93 PowerSchool portal.
+10. **Footer** — Loaded from `all.js` and styled through `all.css`. It closes the page with Thunder Ridge Football Booster Club branding, a link back to the homepage, and external links to the official Thunder Ridge school website and Bonneville School District 93 PowerSchool portal.
 
 The administrator content-management area is also planned, but it is not currently visible as a public homepage section. It should be treated as a future administrative feature rather than part of the current visitor flow.
 

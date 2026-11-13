@@ -34,10 +34,6 @@ body {
   font-size: 18px;
 }
 
-.main-nav a[aria-current="page"] {
-  color: var(--red);
-}
-
 .store-section {
   background: var(--paper);
 }

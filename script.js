@@ -1,18 +1,3 @@
-const menuButton = document.querySelector('.menu-toggle');
-const mainNav = document.querySelector('#main-nav');
-
-menuButton.addEventListener('click', () => {
-  const isOpen = mainNav.classList.toggle('is-open');
-  menuButton.setAttribute('aria-expanded', String(isOpen));
-});
-
-mainNav.addEventListener('click', (event) => {
-  if (event.target.closest('a')) {
-    mainNav.classList.remove('is-open');
-    menuButton.setAttribute('aria-expanded', 'false');
-  }
-});
-
 const pageMenu = document.querySelector('.quick-strip');
 const pageMenuButton = document.querySelector('.page-menu-toggle');
 const pageLinks = document.querySelector('#page-links');

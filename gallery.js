@@ -3,15 +3,6 @@
 // Published CSV link of the "gallery" tab (File → Share → Publish to web → pick the tab → CSV)
 const GALLERY_SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTbuSz2W3-9TrBprkb3iMMsOYp5wBmMDHrBJVXlA_JiE3yUgmEyAVZjR0CTnjHuxtz7Tbhdp8PzNKjC/pub?gid=1641952326&single=true&output=csv';
 
-// ===== Mobile menu =====
-const menuButton = document.querySelector('.menu-toggle');
-const mainNav = document.querySelector('#main-nav');
-
-menuButton.addEventListener('click', () => {
-  const isOpen = mainNav.classList.toggle('is-open');
-  menuButton.setAttribute('aria-expanded', String(isOpen));
-});
-
 // ===== Sheet helpers (same as script.js) =====
 function parseCSV(text) {
   const rows = []; let row = [], cell = '', inQ = false;

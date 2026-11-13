@@ -141,6 +141,7 @@ const feedback = form.querySelector('.form-feedback');
 const sizeField = document.querySelector('#size-field');
 const sizeSelect = form.elements.size;
 let currentItem = null;
+let openedAt = 0;
 
 function openReserve(item) {
   currentItem = item;

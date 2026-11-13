@@ -20,7 +20,13 @@ body {
   letter-spacing: .015em;
   text-transform: uppercase;
 }
-
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 .page-hero-copy {
   max-width: 520px;
   margin: 0;

@@ -160,6 +160,7 @@ function openReserve(item) {
     sizeField.hidden = true;
     sizeSelect.required = false;
   }
+  openedAt = Date.now();
   dialog.showModal();
 }
 
@@ -168,6 +169,13 @@ dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+  // Bot check: the hidden field was filled in, or the form was submitted in under 2 seconds
+if (form.elements.website.value || Date.now() - openedAt < 2000) {
+  feedback.textContent = 'Reserved! The Booster Club will be in touch about pickup.';
+  form.reset();
+  setTimeout(() => dialog.close(), 2500);
+  return;
+}
   if (RESERVE_FORM.action.includes('PASTE_')) {
     feedback.textContent = 'Reservations are not set up yet.';
     return;

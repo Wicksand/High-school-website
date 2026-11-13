@@ -143,7 +143,7 @@
   font-size: 40px;
 }
 /* option 1 */
-@media (max-width: 560px) {
+/* @media (max-width: 560px) {
   .gallery-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -158,7 +158,7 @@
     padding: 36px 16px 16px;
     font-size: 16px;
   }
-}
+} */
 /* option 2 */
 /* @media (max-width: 560px) {
   .gallery-grid {
@@ -190,7 +190,7 @@
 } */
 
 /* option 3 */
-/* @media (max-width: 560px) {
+@media (max-width: 560px) {
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
     gap: 8px;
@@ -220,4 +220,4 @@
     max-height: calc(100vh - 190px);
   }
 
-} */
+}

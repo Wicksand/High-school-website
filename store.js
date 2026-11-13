@@ -9,12 +9,12 @@ const STORE_SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTbuSz2
 const RESERVE_FORM = {
   action: 'https://docs.google.com/forms/d/e/1FAIpQLScwRVqRV_Vqex4a-J2DreA2Ov2YYONBAXDgNugDybmEaL-how/formResponse',
   fields: {
-    name: 'entry.0000000001',
-    email: 'entry.0000000002',
-    item: 'entry.0000000003',
-    size: 'entry.0000000004',
-    quantity: 'entry.0000000005',
-    notes: 'entry.0000000006'
+    name: 'entry.1521779006',
+    email: 'entry.109984016',
+    item: 'entry.1767052160',
+    size: 'entry.1793409310',
+    quantity: 'entry.1673246123',
+    notes: 'entry.1802804218'
   }
 };
 

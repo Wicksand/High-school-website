@@ -7,7 +7,7 @@ const STORE_SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTbuSz2
 //    action = the form's link with /viewform replaced by /formResponse
 //    fields = the entry.#### id of each question
 const RESERVE_FORM = {
-  action: 'https://docs.google.com/forms/d/e/PASTE_FORM_ID/formResponse',
+  action: 'https://docs.google.com/forms/d/e/1FAIpQLScwRVqRV_Vqex4a-J2DreA2Ov2YYONBAXDgNugDybmEaL-how/formResponse',
   fields: {
     name: 'entry.0000000001',
     email: 'entry.0000000002',

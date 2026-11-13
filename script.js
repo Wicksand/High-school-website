@@ -13,6 +13,37 @@ mainNav.addEventListener('click', (event) => {
   }
 });
 
+const pageMenu = document.querySelector('.quick-strip');
+const pageMenuButton = document.querySelector('.page-menu-toggle');
+const pageLinks = document.querySelector('#page-links');
+const mobilePageMenu = window.matchMedia('(max-width: 800px)');
+
+function updatePageMenuPosition() {
+  const header = document.querySelector('.site-header');
+  const stickyThreshold = pageMenu.offsetTop - header.offsetHeight;
+  const isStuck = mobilePageMenu.matches && window.scrollY > stickyThreshold;
+
+  pageMenu.classList.toggle('is-stuck', isStuck);
+  if (!isStuck) pageMenu.classList.remove('is-open');
+  pageMenuButton.setAttribute('aria-expanded', String(!isStuck || pageMenu.classList.contains('is-open')));
+}
+
+pageMenuButton.addEventListener('click', () => {
+  const isOpen = pageMenu.classList.toggle('is-open');
+  pageMenuButton.setAttribute('aria-expanded', String(isOpen));
+});
+
+pageLinks.addEventListener('click', (event) => {
+  if (event.target.closest('a')) {
+    pageMenu.classList.remove('is-open');
+    pageMenuButton.setAttribute('aria-expanded', 'false');
+  }
+});
+
+window.addEventListener('scroll', updatePageMenuPosition, { passive: true });
+window.addEventListener('resize', updatePageMenuPosition);
+updatePageMenuPosition();
+
 //calender toggle formatting
 const BASE_CALENDAR_URL =
   'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FDenver' +

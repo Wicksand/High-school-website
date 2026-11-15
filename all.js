@@ -58,3 +58,6 @@ mainNav.addEventListener('click', (event) => {
     menuButton.setAttribute('aria-expanded', 'false');
   }
 });
+
+
+// ADD SPONSOR CAROUSEL TO EACH PAGE HERE, EXCEPT FOR SPONSOR PAGE.

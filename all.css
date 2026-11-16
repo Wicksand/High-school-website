@@ -123,6 +123,10 @@
 
 /* Shared responsive header and footer behavior. */
 @media (max-width: 800px) {
+  .site-header {
+    margin-bottom: var(--mobile-nav-space, 0px);
+  }
+
   .header-main {
     min-height: 72px;
   }
@@ -144,7 +148,7 @@
     display: none;
     align-items: stretch;
     gap: 0;
-    padding: 7px 18px 14px;
+    padding: 12px 18px;
     background: #fff;
     border-bottom: 1px solid var(--line);
   }

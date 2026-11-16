@@ -743,7 +743,7 @@ h1,
 
 @media (max-width: 800px) {
   .quick-strip {
-    top: 72px;
+    top: calc(72px + var(--mobile-nav-space, 0px));
   }
 
   .wrap {
@@ -804,16 +804,13 @@ h1,
   }
 
   .quick-strip {
-    display: grid;
-    grid-template-rows: 0fr 180px;
-    transition: grid-template-rows .35s ease;
+    display: block;
   }
 
   .quick-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 0;
-    overflow: hidden;
+    padding-block: 12px;
   }
 
   .quick-strip.is-stuck .page-menu-toggle {
@@ -824,11 +821,19 @@ h1,
   }
 
   .quick-strip.is-stuck {
-    grid-template-rows: 72px 0fr;
+    min-height: 72px;
+  }
+
+  .quick-strip.is-stuck .quick-links {
+    display: none;
   }
 
   .quick-strip.is-stuck.is-open {
-    grid-template-rows: 72px 180px;
+    min-height: 0;
+  }
+
+  .quick-strip.is-stuck.is-open .quick-links {
+    display: grid;
   }
 
   .quick-links a {

@@ -47,17 +47,27 @@ if (currentLink) currentLink.setAttribute('aria-current', 'page');
 const menuButton = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('#main-nav');
 
+function syncMobileNavSpace() {
+  const isMobile = window.matchMedia('(max-width: 800px)').matches;
+  const isOpen = mainNav.classList.contains('is-open');
+  document.documentElement.style.setProperty('--mobile-nav-space', isMobile && isOpen ? `${mainNav.offsetHeight}px` : '0px');
+}
+
 menuButton.addEventListener('click', () => {
   const isOpen = mainNav.classList.toggle('is-open');
   menuButton.setAttribute('aria-expanded', String(isOpen));
+  syncMobileNavSpace();
 });
 
 mainNav.addEventListener('click', (event) => {
   if (event.target.closest('a')) {
     mainNav.classList.remove('is-open');
     menuButton.setAttribute('aria-expanded', 'false');
+    syncMobileNavSpace();
   }
 });
+
+window.addEventListener('resize', syncMobileNavSpace);
 
 
 // ADD SPONSOR CAROUSEL TO EACH PAGE HERE, EXCEPT FOR SPONSOR PAGE.

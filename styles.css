@@ -21,7 +21,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 135px;
   background: linear-gradient(to bottom, #fff 0 100vh, #090f18 100vh 100%);
 }
 
@@ -197,7 +197,7 @@ h1,
 
 .quick-strip {
   position: sticky;
-  top: 83px;
+  top: var(--header-h, 83px);
   z-index: 4;
   background: var(--navy);
   color: #fff;
@@ -743,7 +743,7 @@ h1,
 
 @media (max-width: 800px) {
   .quick-strip {
-    top: calc(72px + var(--mobile-nav-space, 0px));
+    top: calc(var(--header-h, 72px) + var(--mobile-nav-space, 0px));
   }
 
   .wrap {

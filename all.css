@@ -121,6 +121,82 @@
   color: #c4dbf7;
 }
 
+/* Sponsor strip at the top of the header */
+.sponsor-bar {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.sponsor-bar[hidden] {
+  display: none;
+}
+
+.sponsor-inner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 44px;
+}
+
+.sponsor-label {
+  flex: none;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.sponsor-window {
+  flex: 1;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 28px, #000 calc(100% - 28px), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 28px, #000 calc(100% - 28px), transparent);
+}
+
+.sponsor-track {
+  display: flex;
+  width: max-content;
+  animation: sponsor-scroll var(--dur, 30s) linear infinite;
+}
+
+.sponsor-window:hover .sponsor-track,
+.sponsor-window:focus-within .sponsor-track {
+  animation-play-state: paused;
+}
+
+@keyframes sponsor-scroll {
+  to { transform: translateX(-50%); }
+}
+
+.sponsor-item {
+  display: flex;
+  align-items: center;
+  flex: none;
+  height: 44px;
+  margin-right: 48px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+a.sponsor-item:hover,
+a.sponsor-item:focus-visible {
+  color: var(--red);
+}
+
+.sponsor-item img {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+}
+
+
+
 /* Shared responsive header and footer behavior. */
 @media (max-width: 800px) {
   .site-header {
@@ -177,5 +253,27 @@
   .footer-inner {
     align-items: flex-start;
     flex-direction: column;
+  }
+  .sponsor-inner {
+    height: 38px;
+    gap: 10px;
+  }
+
+  .sponsor-label {
+    display: none;
+  }
+
+  .sponsor-item {
+    height: 38px;
+  }
+}
+/* For people who prefer less motion: no animation, scroll by hand */
+@media (prefers-reduced-motion: reduce) {
+  .sponsor-window {
+    overflow-x: auto;
+  }
+
+  .sponsor-track {
+    animation: none;
   }
 }

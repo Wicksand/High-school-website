@@ -1,0 +1,88 @@
+/* Sponsors page — builds on styles.css and the page hero in store.css */
+
+.sponsors-section {
+  background: var(--paper);
+}
+
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.sponsor-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+}
+
+.sponsor-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--red);
+}
+
+.sponsor-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  padding: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.sponsor-logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.sponsor-logo-name {
+  font: 700 28px/1.05 var(--display);
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.sponsor-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 18px 20px 20px;
+}
+
+.sponsor-body h3 {
+  margin: 0 0 8px;
+  font: 600 24px/1.05 var(--display);
+  text-transform: uppercase;
+}
+
+.sponsor-message {
+  margin: 0 0 16px;
+  color: #515d69;
+  font-size: 15px;
+  white-space: pre-line;
+}
+
+.sponsor-visit {
+  margin-top: auto;
+  color: var(--red);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sponsor-visit:hover,
+.sponsor-visit:focus-visible {
+  text-decoration: underline;
+}
+
+@media (max-width: 560px) {
+  .sponsor-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}

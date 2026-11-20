@@ -743,7 +743,8 @@ h1,
 
 @media (max-width: 800px) {
   .quick-strip {
-    top: calc(var(--header-h, 72px) + var(--mobile-nav-space, 0px));
+    top: var(--header-h, 72px);
+    min-height: var(--page-menu-collapsed-h, 52px);
   }
 
   .wrap {
@@ -751,8 +752,9 @@ h1,
   }
 
   .hero {
-    height: calc(100vh - 252px);
-    height: calc(100svh - 252px);
+    height: calc(100vh - var(--header-h, 72px) - var(--page-menu-collapsed-h, 52px));
+    height: calc(100svh - var(--header-h, 72px) - var(--page-menu-collapsed-h, 52px));
+    height: calc(100dvh - var(--header-h, 72px) - var(--page-menu-collapsed-h, 52px));
     min-height: 0;
     background-position: 58% center;
   }
@@ -787,20 +789,16 @@ h1,
   .page-menu-toggle {
     display: block;
     width: 100%;
-    min-height: 0;
-    padding: 0 18px;
+    min-height: var(--page-menu-collapsed-h, 52px);
+    padding: 12px 18px;
     border: 0;
-    border-bottom: 0;
+    border-bottom: 1px solid #ffffff28;
     background: var(--navy);
     color: #fff;
     text-align: center;
     font: inherit;
     font-weight: 700;
     cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    overflow: hidden;
-    transition: opacity .22s ease, visibility .32s ease;
   }
 
   .quick-strip {
@@ -808,31 +806,12 @@ h1,
   }
 
   .quick-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-block: 12px;
-  }
-
-  .quick-strip.is-stuck .page-menu-toggle {
-    min-height: 72px;
-    border-bottom: 1px solid #ffffff28;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .quick-strip.is-stuck {
-    min-height: 72px;
-  }
-
-  .quick-strip.is-stuck .quick-links {
     display: none;
+    grid-template-columns: 1fr 1fr;
+    padding-block: 0;
   }
 
-  .quick-strip.is-stuck.is-open {
-    min-height: 0;
-  }
-
-  .quick-strip.is-stuck.is-open .quick-links {
+  .quick-strip.is-open .quick-links {
     display: grid;
   }
 
@@ -896,8 +875,9 @@ h1,
   }
 
   .hero {
-    height: calc(100vh - 252px);
-    height: calc(100svh - 252px);
+    height: calc(100vh - var(--header-h, 72px) - var(--page-menu-collapsed-h, 52px));
+    height: calc(100svh - var(--header-h, 72px) - var(--page-menu-collapsed-h, 52px));
+    height: calc(100dvh - var(--header-h, 72px) - var(--page-menu-collapsed-h, 52px));
     min-height: 0;
     background-position: 62% center;
   }

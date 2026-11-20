@@ -40,8 +40,8 @@ const sharedFooter = `
   </footer>
 `;
 
-// Add page-specific section links here. Each entry appears beneath its site
-// link in every mobile drawer and in the desktop page navigation on that page.
+// Add page-specific section links here. Each entry appears in a desktop
+// dropdown and beneath its site link in every mobile drawer.
 const PAGE_NAVIGATION = {
   home: [
     { id: 'updates', label: 'Latest Update' },
@@ -91,6 +91,16 @@ const currentPage = location.pathname.endsWith('/storefront.html')
 const currentLink = mainNav.querySelector(`[data-page="${currentPage}"]`);
 if (currentLink) currentLink.setAttribute('aria-current', 'page');
 
+const siteNavItems = new Map();
+mainNav.querySelectorAll('a[data-page]').forEach((siteLink) => {
+  const pageKey = siteLink.dataset.page;
+  const item = document.createElement('div');
+  item.className = 'site-nav-item';
+  siteLink.before(item);
+  item.append(siteLink);
+  siteNavItems.set(pageKey, item);
+});
+
 function createPageLinks(pageKey, items, id = '') {
   const links = document.createElement('nav');
   if (id) links.id = id;
@@ -108,42 +118,22 @@ function createPageLinks(pageKey, items, id = '') {
   return links;
 }
 
-const pageNavigationItems = PAGE_NAVIGATION[currentPage] || [];
-let pageMenu = null;
-let pageLinks = null;
-const mobilePageNavGroups = new Map();
-
 Object.entries(PAGE_NAVIGATION).forEach(([pageKey, items]) => {
-  const siteLink = mainNav.querySelector(`[data-page="${pageKey}"]`);
-  if (!siteLink || !items.length) return;
+  const siteNavItem = siteNavItems.get(pageKey);
+  if (!siteNavItem || !items.length) return;
 
   const group = document.createElement('div');
   group.className = 'page-nav-group';
   group.append(createPageLinks(pageKey, items));
-  mobilePageNavGroups.set(pageKey, group);
+  siteNavItem.append(group);
 });
-
-if (pageNavigationItems.length) {
-  pageMenu = document.createElement('div');
-  pageMenu.className = 'quick-strip';
-  pageLinks = createPageLinks(currentPage, pageNavigationItems, 'page-links');
-
-  const pageMain = document.querySelector('main');
-  pageMain?.insertBefore(pageMenu, pageMain.firstChild);
-}
 
 function placeNavigation() {
   const isMobile = window.matchMedia('(max-width: 800px)').matches;
   if (isMobile) {
     drawerNav.append(mainNav);
-    mobilePageNavGroups.forEach((group, pageKey) => {
-      const siteLink = mainNav.querySelector(`[data-page="${pageKey}"]`);
-      siteLink?.after(group);
-    });
   } else {
-    mobilePageNavGroups.forEach((group) => group.remove());
     navHome.after(mainNav);
-    if (pageLinks && pageMenu) pageMenu.append(pageLinks);
   }
 }
 placeNavigation();

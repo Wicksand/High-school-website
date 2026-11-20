@@ -42,7 +42,7 @@ main {
     flex-direction: column;
   }
 
-  main > *:not(.hero):not(.quick-strip) {
+  main > *:not(.hero) {
     order: 2;
   }
 
@@ -50,9 +50,6 @@ main {
     order: 0;
   }
 
-  .quick-strip {
-    order: 1;
-  }
 }
 
 a {
@@ -193,14 +190,6 @@ h1,
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .13em;
-}
-
-.quick-strip {
-  position: sticky;
-  top: var(--header-h, 83px);
-  z-index: 4;
-  background: var(--navy);
-  color: #fff;
 }
 
 .quick-links {
@@ -739,10 +728,6 @@ h1,
 }
 
 @media (max-width: 800px) {
-  .quick-strip {
-    display: none;
-  }
-
   .wrap {
     width: min(var(--wrap),calc(100% - 36px));
   }

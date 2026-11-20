@@ -4,8 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111b2a">
-
-  
   <title>Spiritwear · Thunder Ridge Football</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,32 +36,55 @@
     </section>
   </main>
 
-  <!-- Reservation pop-up -->
-  <dialog id="reserve-dialog" class="reserve-dialog" aria-labelledby="reserve-title">
-    <form id="reserve-form" class="reserve-form">
+  <!-- Reservation list bar (appears once something is added) -->
+  <div id="cart-bar" class="cart-bar" hidden>
+    <span id="cart-count" aria-live="polite"></span>
+    <button type="button" id="cart-open" class="button button-red">Review reservation</button>
+  </div>
+
+  <!-- Pick size and quantity for one item -->
+  <dialog id="add-dialog" class="reserve-dialog" aria-labelledby="add-title">
+    <form id="add-form" class="reserve-form">
       <div class="reserve-head">
         <div>
-          <p class="eyebrow dark-eyebrow">RESERVATION REQUEST</p>
-          <h2 id="reserve-title">Item</h2>
+          <p class="eyebrow dark-eyebrow">ADD TO RESERVATION</p>
+          <h2 id="add-title">Item</h2>
         </div>
         <button type="button" class="reserve-close" aria-label="Close">×</button>
       </div>
-
-      <label>Your name<input name="name" autocomplete="name" required></label>
-      <label>Email address<input name="email" type="email" autocomplete="email" required></label>
       <div class="form-row">
-        <label id="size-field">Size<select name="size"></select></label>
+        <label id="add-size-field">Size<select name="size"></select></label>
         <label>Quantity<input name="quantity" type="number" min="1" max="10" value="1" required></label>
       </div>
-      <label>Notes (optional)<input name="notes" placeholder="Player name, number, etc."></label>
-      <div class="hp-field" aria-hidden="true">
-      <label>Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
-      </div>
-
-      <button class="button button-dark" type="submit">Reserve</button>
+      <button class="button button-dark" type="submit">Add to list</button>
       <p class="form-feedback" aria-live="polite"></p>
     </form>
   </dialog>
 
+  <!-- Review the whole list and submit -->
+  <dialog id="review-dialog" class="reserve-dialog wide" aria-labelledby="review-title">
+    <form id="review-form" class="reserve-form">
+      <div class="reserve-head">
+        <div>
+          <p class="eyebrow dark-eyebrow">RESERVATION REQUEST</p>
+          <h2 id="review-title">Your reservation</h2>
+        </div>
+        <button type="button" class="reserve-close" aria-label="Close">×</button>
+      </div>
+
+      <div id="cart-list" class="cart-list"></div>
+
+      <label>Your name<input name="name" autocomplete="name" required></label>
+      <label>Email address<input name="email" type="email" autocomplete="email" required></label>
+      <label>Notes (optional)<input name="notes" placeholder="Player name, number, etc."></label>
+
+      <div class="hp-field" aria-hidden="true">
+        <label>Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <button id="review-submit" class="button button-dark" type="submit">Reserve</button>
+      <p class="form-feedback" aria-live="polite"></p>
+    </form>
+  </dialog>
 </body>
 </html>

@@ -1,19 +1,3 @@
-const pageMenu = document.querySelector('.quick-strip');
-const pageMenuButton = document.querySelector('.page-menu-toggle');
-const pageLinks = document.querySelector('#page-links');
-
-pageMenuButton.addEventListener('click', () => {
-  const isOpen = pageMenu.classList.toggle('is-open');
-  pageMenuButton.setAttribute('aria-expanded', String(isOpen));
-});
-
-pageLinks.addEventListener('click', (event) => {
-  if (event.target.closest('a')) {
-    pageMenu.classList.remove('is-open');
-    pageMenuButton.setAttribute('aria-expanded', 'false');
-  }
-});
-
 //calender toggle formatting
 const BASE_CALENDAR_URL =
   'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FDenver' +

@@ -12,7 +12,9 @@ const sharedHeader = `
         <span class="brand-mark" aria-hidden="true">TR</span>
         <span><strong>THUNDER RIDGE</strong><small>FOOTBALL · TITANS</small></span>
       </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Site Menu</button>
+      <button class="menu-toggle" type="button" aria-label="Open site menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
       <nav id="main-nav" class="main-nav" aria-label="Main navigation">
         <a href="index.html#home" data-page="home">Home with Registration</a>
         <a href="storefront.html" data-page="storefront">Storefront</a>
@@ -38,9 +40,113 @@ const sharedFooter = `
   </footer>
 `;
 
+// Add page-specific section links here. Each entry appears beneath its site
+// link in every mobile drawer and in the desktop page navigation on that page.
+const PAGE_NAVIGATION = {
+  home: [
+    { id: 'updates', label: 'Latest Update' },
+    { id: 'schedule', label: 'Calendars' },
+    { id: 'registration', label: 'Registration' },
+    { id: 'about', label: 'About' }
+  ]
+};
+const PAGE_PATHS = {
+  home: 'index.html',
+  storefront: 'storefront.html',
+  gallery: 'gallary.html',
+  sponsors: 'sponsors.html'
+};
+
 // Add shared elements before page-specific scripts initialize.
 document.body.insertAdjacentHTML('afterbegin', sharedHeader);
 document.body.insertAdjacentHTML('beforeend', sharedFooter);
+
+// The mobile drawer combines shared site links with any page-specific links.
+const siteHeader = document.querySelector('.site-header');
+const mainNav = document.querySelector('#main-nav');
+const menuButton = document.querySelector('.menu-toggle');
+const navHome = document.createComment('main navigation placement');
+const mobileDrawer = document.createElement('aside');
+mobileDrawer.id = 'mobile-drawer';
+mobileDrawer.className = 'mobile-drawer';
+mobileDrawer.setAttribute('aria-label', 'Site menu');
+const drawerNav = document.createElement('div');
+drawerNav.className = 'drawer-navigation';
+mobileDrawer.appendChild(drawerNav);
+const drawerBackdrop = document.createElement('button');
+drawerBackdrop.className = 'drawer-backdrop';
+drawerBackdrop.type = 'button';
+drawerBackdrop.setAttribute('aria-label', 'Close site menu');
+drawerBackdrop.setAttribute('tabindex', '-1');
+siteHeader.after(drawerBackdrop, mobileDrawer);
+mainNav.before(navHome);
+
+const currentPage = location.pathname.endsWith('/storefront.html')
+  ? 'storefront'
+  : location.pathname.endsWith('/gallary.html')
+    ? 'gallery'
+    : location.pathname.endsWith('/sponsors.html')
+      ? 'sponsors'
+      : 'home';
+const currentLink = mainNav.querySelector(`[data-page="${currentPage}"]`);
+if (currentLink) currentLink.setAttribute('aria-current', 'page');
+
+function createPageLinks(pageKey, items, id = '') {
+  const links = document.createElement('nav');
+  if (id) links.id = id;
+  links.className = 'quick-links';
+  links.setAttribute('aria-label', 'Page navigation');
+
+  items.forEach(({ id: sectionId, label }, index) => {
+    const link = document.createElement('a');
+    link.href = `${PAGE_PATHS[pageKey] || `${pageKey}.html`}#${sectionId}`;
+    const number = document.createElement('span');
+    number.textContent = String(index + 1);
+    link.append(number, document.createTextNode(label));
+    links.appendChild(link);
+  });
+  return links;
+}
+
+const pageNavigationItems = PAGE_NAVIGATION[currentPage] || [];
+let pageMenu = null;
+let pageLinks = null;
+const mobilePageNavGroups = new Map();
+
+Object.entries(PAGE_NAVIGATION).forEach(([pageKey, items]) => {
+  const siteLink = mainNav.querySelector(`[data-page="${pageKey}"]`);
+  if (!siteLink || !items.length) return;
+
+  const group = document.createElement('div');
+  group.className = 'page-nav-group';
+  group.append(createPageLinks(pageKey, items));
+  mobilePageNavGroups.set(pageKey, group);
+});
+
+if (pageNavigationItems.length) {
+  pageMenu = document.createElement('div');
+  pageMenu.className = 'quick-strip';
+  pageLinks = createPageLinks(currentPage, pageNavigationItems, 'page-links');
+
+  const pageMain = document.querySelector('main');
+  pageMain?.insertBefore(pageMenu, pageMain.firstChild);
+}
+
+function placeNavigation() {
+  const isMobile = window.matchMedia('(max-width: 800px)').matches;
+  if (isMobile) {
+    drawerNav.append(mainNav);
+    mobilePageNavGroups.forEach((group, pageKey) => {
+      const siteLink = mainNav.querySelector(`[data-page="${pageKey}"]`);
+      siteLink?.after(group);
+    });
+  } else {
+    mobilePageNavGroups.forEach((group) => group.remove());
+    navHome.after(mainNav);
+    if (pageLinks && pageMenu) pageMenu.append(pageLinks);
+  }
+}
+placeNavigation();
 
 // Match overscroll areas to the shared sponsor bar above and footer below.
 function updateEdgeBackground() {
@@ -64,7 +170,6 @@ if (document.body.hasAttribute('data-no-sponsor-bar')) {
 }
 
 // Keep sticky elements below the header, whatever its height (sponsor bar included)
-const siteHeader = document.querySelector('.site-header');
 let lastHeaderHeight = 0;
 
 function syncHeaderHeight() {
@@ -78,41 +183,32 @@ function syncHeaderHeight() {
 new ResizeObserver(syncHeaderHeight).observe(siteHeader);
 syncHeaderHeight();
 
-// Mark the active destination and keep the small-screen navigation accessible.
-const currentPage = location.pathname.endsWith('/storefront.html')
-  ? 'storefront'
-  : location.pathname.endsWith('/gallary.html')
-    ? 'gallery'
-    : location.pathname.endsWith('/sponsors.html')
-      ? 'sponsors'
-      : 'home';
-const currentLink = document.querySelector(`[data-page="${currentPage}"]`);
-if (currentLink) currentLink.setAttribute('aria-current', 'page');
-
-const menuButton = document.querySelector('.menu-toggle');
-const mainNav = document.querySelector('#main-nav');
-
-function syncMobileNavSpace() {
-  const isMobile = window.matchMedia('(max-width: 800px)').matches;
-  const isOpen = mainNav.classList.contains('is-open');
-  document.documentElement.style.setProperty('--mobile-nav-space', isMobile && isOpen ? `${mainNav.offsetHeight}px` : '0px');
+function closeMobileMenu() {
+  mobileDrawer.classList.remove('is-open');
+  drawerBackdrop.classList.remove('is-open');
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.setAttribute('aria-label', 'Open site menu');
 }
 
 menuButton.addEventListener('click', () => {
-  const isOpen = mainNav.classList.toggle('is-open');
+  const isOpen = mobileDrawer.classList.toggle('is-open');
+  drawerBackdrop.classList.toggle('is-open', isOpen);
   menuButton.setAttribute('aria-expanded', String(isOpen));
-  syncMobileNavSpace();
+  menuButton.setAttribute('aria-label', isOpen ? 'Close site menu' : 'Open site menu');
 });
 
-mainNav.addEventListener('click', (event) => {
-  if (event.target.closest('a')) {
-    mainNav.classList.remove('is-open');
-    menuButton.setAttribute('aria-expanded', 'false');
-    syncMobileNavSpace();
-  }
+drawerBackdrop.addEventListener('click', closeMobileMenu);
+drawerNav.addEventListener('click', (event) => {
+  if (event.target.closest('a')) closeMobileMenu();
 });
-
-window.addEventListener('resize', syncMobileNavSpace);
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeMobileMenu();
+});
+window.addEventListener('resize', () => {
+  const wasMobile = drawerNav.contains(mainNav);
+  placeNavigation();
+  if (wasMobile !== drawerNav.contains(mainNav)) closeMobileMenu();
+});
 
 
 // ADD SPONSOR CAROUSEL TO EACH PAGE HERE, EXCEPT FOR SPONSOR PAGE.

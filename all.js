@@ -42,6 +42,22 @@ const sharedFooter = `
 document.body.insertAdjacentHTML('afterbegin', sharedHeader);
 document.body.insertAdjacentHTML('beforeend', sharedFooter);
 
+// Match overscroll areas to the shared sponsor bar above and footer below.
+function updateEdgeBackground() {
+  const root = document.documentElement;
+  const atBottom = root.scrollHeight > window.innerHeight &&
+    window.scrollY >= root.scrollHeight - window.innerHeight - 1;
+  const color = atBottom ? '#090f18' : '#f5f6f8';
+
+  root.style.background = color;
+  document.body.style.background = color;
+}
+
+window.addEventListener('scroll', updateEdgeBackground, { passive: true });
+window.addEventListener('resize', updateEdgeBackground);
+new ResizeObserver(updateEdgeBackground).observe(document.body);
+updateEdgeBackground();
+
 // Pages marked data-no-sponsor-bar (the sponsors page) don't show the scrolling bar
 if (document.body.hasAttribute('data-no-sponsor-bar')) {
   document.querySelector('#sponsor-bar')?.remove();

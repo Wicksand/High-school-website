@@ -16,7 +16,7 @@ const sharedHeader = `
         <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>
       <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-        <a href="index.html#home" data-page="home">Home with Registration</a>
+        <a href="index.html#home" data-page="home">Home</a>
         <a href="storefront.html" data-page="storefront">Storefront</a>
         <a href="gallary.html" data-page="gallery">Gallery</a>
         <a href="sponsors.html" data-page="sponsors">Sponsors</a>
@@ -211,6 +211,14 @@ window.addEventListener('resize', () => {
   const bar = document.querySelector('#sponsor-bar');
   const track = document.querySelector('#sponsor-track');
   if (!bar || !track) return;
+
+
+  // On mobile, tapping anywhere on the bar opens the Sponsors page
+  bar.addEventListener('click', (e) => {
+    if (!window.matchMedia('(max-width: 800px)').matches) return;
+    e.preventDefault(); // stops the tap from opening a sponsor's own website
+    window.location.href = 'sponsors.html';
+  });
 
   const SPEED = 40;            // pixels per second; lower = slower
 

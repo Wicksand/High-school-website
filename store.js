@@ -112,11 +112,14 @@ function totalQty() {
 const cartBar = document.querySelector('#cart-bar');
 const cartCount = document.querySelector('#cart-count');
 
+const cartBadge = document.querySelector('#cart-badge');
+
 function updateCartBar() {
   const n = totalQty();
   cartBar.hidden = n === 0;
   document.body.classList.toggle('has-cart', n > 0);
-  cartCount.textContent = n + (n === 1 ? ' item' : ' items') + ' in your reservation';
+  cartBadge.textContent = n;
+  cartCount.textContent = n + (n === 1 ? ' item' : ' items') + ' reserved';
 }
 
 // Drops saved lines for items that were removed, sold out, or had their sizes changed

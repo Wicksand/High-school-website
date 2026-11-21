@@ -38,9 +38,19 @@
 
   <!-- Reservation list bar (appears once something is added) -->
   <div id="cart-bar" class="cart-bar" hidden>
-    <span id="cart-count" aria-live="polite"></span>
-    <button type="button" id="cart-open" class="button button-red">Review reservation</button>
+  <div class="wrap cart-bar-inner">
+    <div class="cart-summary">
+      <span class="cart-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a1 1 0 0 0 1 .8h9.6a1 1 0 0 0 1-.8L21 7H6"/></svg>
+        <b id="cart-badge" class="cart-badge">0</b>
+      </span>
+      <span id="cart-count" aria-live="polite"></span>
+    </div>
+    <button type="button" id="cart-open" class="cart-checkout">
+      Review reservation <span aria-hidden="true">→</span>
+    </button>
   </div>
+</div>
 
   <!-- Pick size and quantity for one item -->
   <dialog id="add-dialog" class="reserve-dialog" aria-labelledby="add-title">
